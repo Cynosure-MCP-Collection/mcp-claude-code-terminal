@@ -1,0 +1,28 @@
+{
+    "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+    "name": "io.github.andreasjhagen/claude-code-terminal",
+    "description": "MCP server for starting and controlling Claude Code CLI coding sessions",
+    "version": "1.0.0",
+    "icons": [
+        {
+            "src": "https://raw.githubusercontent.com/andreasjhagen/Cynosure-MCPs/main/mcp-claude-code-terminal/icon.png",
+            "mimeType": "image/png"
+        }
+    ],
+    "packages": [
+        {
+            "registryType": "npm",
+            "identifier": "@cynosure-mcp/claude-code-terminal",
+            "version": "1.0.0",
+            "transport": {
+                "type": "stdio"
+            },
+            "environmentVariables": []
+        }
+    ],
+    "repository": {
+        "url": "https://github.com/andreasjhagen/Cynosure-MCPs",
+        "source": "github",
+        "subfolder": "mcp-claude-code-terminal"
+    }
+}

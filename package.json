@@ -1,0 +1,43 @@
+{
+    "name": "@cynosure-mcp/claude-code-terminal",
+    "mcpName": "io.github.andreasjhagen/claude-code-terminal",
+    "version": "1.0.0",
+    "description": "MCP server for starting and controlling Claude Code CLI coding sessions",
+    "type": "module",
+    "main": "dist/index.js",
+    "bin": {
+        "claude-code-terminal": "dist/index.js"
+    },
+    "scripts": {
+        "build": "tsc",
+        "start": "node dist/index.js",
+        "dev": "tsx src/index.ts"
+    },
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.27.1",
+        "node-pty": "^1.1.0",
+        "zod": "^3.24.0"
+    },
+    "devDependencies": {
+        "@types/node": "^22.0.0",
+        "tsx": "^4.19.0",
+        "typescript": "^5.7.0"
+    },
+    "files": [
+        "dist",
+        "server.json",
+        "icon.png"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "keywords": [
+        "mcp",
+        "model-context-protocol",
+        "claude",
+        "claude-code",
+        "anthropic",
+        "terminal",
+        "coding-agent"
+    ]
+}
