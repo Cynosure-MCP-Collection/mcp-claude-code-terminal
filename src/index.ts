@@ -178,6 +178,7 @@ const inputFormatSchema = z.enum(['text', 'stream-json']);
 server.registerTool(
     'check_claude_cli',
     {
+        annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
         description: 'Check whether the Claude Code CLI is available and report its version and authentication status.',
         inputSchema: {
             claude_command: z.string().optional().describe('Claude executable path or command name. Defaults to CLAUDE_CODE_CLI_PATH or claude.'),
@@ -215,6 +216,7 @@ server.registerTool(
 server.registerTool(
     'claude_print',
     {
+        annotations: { readOnlyHint: false, destructiveHint: true, idempotentHint: false, openWorldHint: true },
         description: 'Run Claude Code non-interactively with claude -p and return stdout/stderr. This is best for one-shot tasks or scripted automation.',
         inputSchema: {
             prompt: z.string().min(1).describe('Task prompt to pass to claude -p.'),
@@ -299,6 +301,7 @@ server.registerTool(
 server.registerTool(
     'start_claude_session',
     {
+        annotations: { readOnlyHint: false, destructiveHint: true, idempotentHint: false, openWorldHint: true },
         description: 'Start an interactive Claude Code terminal session in a PTY. Use read_claude_session and send_claude_input to interact with it.',
         inputSchema: {
             prompt: z.string().optional().describe('Optional initial prompt to pass to claude.'),
@@ -414,6 +417,7 @@ server.registerTool(
 server.registerTool(
     'read_claude_session',
     {
+        annotations: { readOnlyHint: false, destructiveHint: true, idempotentHint: true, openWorldHint: false },
         description: 'Read buffered terminal output from a running or recently exited interactive Claude Code session.',
         inputSchema: {
             session_id: z.string().describe('Session ID returned by start_claude_session.'),
@@ -444,6 +448,7 @@ server.registerTool(
 server.registerTool(
     'send_claude_input',
     {
+        annotations: { readOnlyHint: false, destructiveHint: true, idempotentHint: false, openWorldHint: true },
         description: 'Send text or a control key to an interactive Claude Code session.',
         inputSchema: {
             session_id: z.string().describe('Session ID returned by start_claude_session.'),
@@ -492,6 +497,7 @@ server.registerTool(
 server.registerTool(
     'stop_claude_session',
     {
+        annotations: { readOnlyHint: false, destructiveHint: true, idempotentHint: true, openWorldHint: false },
         description: 'Stop an interactive Claude Code session.',
         inputSchema: {
             session_id: z.string().describe('Session ID returned by start_claude_session.'),
@@ -522,6 +528,7 @@ server.registerTool(
 server.registerTool(
     'list_claude_sessions',
     {
+        annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
         description: 'List interactive Claude Code sessions currently tracked by this MCP process.',
         inputSchema: {},
     },
