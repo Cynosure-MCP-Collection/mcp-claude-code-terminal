@@ -168,7 +168,7 @@ const server = new McpServer({
     version: '1.0.0',
     title: 'Claude Code Terminal',
     description: 'Start and control Anthropic Claude Code CLI coding sessions.',
-    icons: [{ src: 'https://raw.githubusercontent.com/andreasjhagen/Cynosure-MCPs/main/mcp-claude-code-terminal/icon.png', mimeType: 'image/png' }],
+    icons: [{ src: 'https://unpkg.com/@cynosure-mcp/claude-code-terminal@1.0.1/icon.png', mimeType: 'image/png' }],
 });
 
 const permissionModeSchema = z.enum(['default', 'acceptEdits', 'plan', 'auto', 'dontAsk', 'bypassPermissions']);
