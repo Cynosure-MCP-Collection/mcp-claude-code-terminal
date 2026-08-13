@@ -21,8 +21,7 @@
         }
     ],
     "repository": {
-        "url": "https://github.com/andreasjhagen/Cynosure-MCPs",
-        "source": "github",
-        "subfolder": "mcp-claude-code-terminal"
+        "url": "https://github.com/Cynosure-MCP-Collection/mcp-claude-code-terminal",
+        "source": "github"
     }
 }
